@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hnrd.Multi_DataSource.mapper.master.EntInfoCollectMapper">
+  <resultMap id="BaseResultMap" type="com.hnrd.Multi_DataSource.pojo.EntInfoCollect">
+    <result column="administrative division1" jdbcType="VARCHAR" property="administrativeDivision1" />
+    <result column="enterprise" jdbcType="VARCHAR" property="enterprise" />
+    <result column="social_credit_code" jdbcType="VARCHAR" property="socialCreditCode" />
+    <result column="administrative_division2" jdbcType="VARCHAR" property="administrativeDivision2" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+    <result column="contacts" jdbcType="VARCHAR" property="contacts" />
+    <result column="contact_num" jdbcType="VARCHAR" property="contactNum" />
+    <result column="waste_production_information" jdbcType="VARCHAR" property="wasteProductionInformation" />
+    <result column="creat_at" jdbcType="VARCHAR" property="creatAt" />
+    <result column="update_at" jdbcType="VARCHAR" property="updateAt" />
+    <result column="id" jdbcType="INTEGER" property="id" />
+  </resultMap>
+  <insert id="insert" parameterType="com.hnrd.Multi_DataSource.pojo.EntInfoCollect">
+    insert into ent_info_collect (`administrative division1`, enterprise, 
+      social_credit_code, administrative_division2, 
+      address, contacts, contact_num, 
+      waste_production_information, creat_at, update_at, 
+      id)
+    values (#{administrativeDivision1,jdbcType=VARCHAR}, #{enterprise,jdbcType=VARCHAR}, 
+      #{socialCreditCode,jdbcType=VARCHAR}, #{administrativeDivision2,jdbcType=VARCHAR}, 
+      #{address,jdbcType=VARCHAR}, #{contacts,jdbcType=VARCHAR}, #{contactNum,jdbcType=VARCHAR}, 
+      #{wasteProductionInformation,jdbcType=VARCHAR}, #{creatAt,jdbcType=VARCHAR}, #{updateAt,jdbcType=VARCHAR}, 
+      #{id,jdbcType=INTEGER})
+  </insert>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select `administrative division1`, enterprise, social_credit_code, administrative_division2, 
+    address, contacts, contact_num, waste_production_information, creat_at, update_at, 
+    id
+    from ent_info_collect
+  </select>
+</mapper>

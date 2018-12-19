@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <context id="MysqlContext" targetRuntime="Mybatis3Simple" defaultModelType="flat">
+    	<property name="beginningDelimiter" value="`"></property>
+    	<property name="endingDelimiter" value="`"></property>
+    	<plugin type="org.mybatis.generator.plugins.MapperConfigPlugin">
+    		<!-- <property name="mappers" value="com.hnrd.industrialwaste.mapper.MyMapper"></property> -->
+    	</plugin>
+    	<!-- 配置注解生成器 -->
+    	<commentGenerator type="com.hnrd.Multi_DataSource.utils.MyGeneratorComment">		
+    		<!-- <property name="suppressAllComments" value="true"/> -->
+    	</commentGenerator>
+    	<jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
+    		connectionURL="jdbc:mysql://127.0.0.1:3306/infomation_collection?useUnicode=true&amp;characterEncoding=utf-8&amp;useSSL=true&amp;serverTimezone=Asia/Shanghai"
+    		userId="root"
+    		password="root">
+    	</jdbcConnection>
+    	<!-- 定义生成的pojo所在包 -->
+    	<javaModelGenerator targetPackage="com.hnrd.Multi_DataSource.pojo" targetProject="src/main/java"/>
+    	<!-- 定义生成的mapper.xml所在目录 -->
+    	<sqlMapGenerator targetPackage="mapper/master" targetProject="src/main/resources"/>
+    	<!-- 配置mapper对应的java映射 -->
+    	<javaClientGenerator targetPackage="com.hnrd.Multi_DataSource.mapper.master" targetProject="src/main/java" type="XMLMAPPER"/>
+    	<table tableName="ent_info_collect"></table>
+    </context>
+</generatorConfiguration>

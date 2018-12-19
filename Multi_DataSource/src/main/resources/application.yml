@@ -1,0 +1,17 @@
+server:
+  port: 8085 
+first:
+  datasource:
+    url: jdbc:mysql://localhost/first
+    username: dbuser1
+    password: dbpass1
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+
+second:
+    datasource:
+    url: jdbc:mysql://localhost/second
+    username: dbuser2
+    password: dbpass2
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource 
